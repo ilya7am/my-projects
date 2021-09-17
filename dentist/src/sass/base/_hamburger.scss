@@ -1,0 +1,40 @@
+%hamburger__line {
+    content: "";
+    position: absolute;
+    display: inline-block;               // чтобы был квадратным
+    background: $color-hamburger;
+    border-radius: 5px;
+    height: 3px;
+    width: 100%;
+}
+
+
+.hamburger {
+    display: none;
+    position: relative;
+    width: 35px;
+    height: 27px;
+    margin-right: 17px;
+    @include media-tablet {                 // чтобы появлялся лишь на планшетах
+        display: inline-block;
+    }
+    &::before {
+        @extend %hamburger__line;
+        top: 0;
+        left: 0;
+    }
+    &::after {
+        @extend %hamburger__line;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+
+.hamburger__line {
+    @extend %hamburger__line; 
+    top: calc(50% - 1.5px);         // чтобы был по центру. 1.5px, тк вся толщина (высота) полоски - 3px
+    left: 0;
+}
+
+

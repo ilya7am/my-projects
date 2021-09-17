@@ -1,0 +1,30 @@
+button {
+    padding: 13px 25px 15px;
+    font-family: "Poppins", Verdana, sans-serif;
+    font-style: bold;
+    font-weight: 400;
+    font-size: 1.7rem;
+    line-height: 1rem;
+    cursor: pointer;
+    transition: all .3s;
+}
+  
+.sign-button1 {
+    background: $color-light;
+    border: 1px solid $color-header;
+    &:hover {                                    // & - родительский элемент, можно вкладывать сразу внутрь
+        background: $color-hover1;
+        border: 1px solid $color-hover1;
+    }
+}
+
+.sign-button2 {
+    background: $color-link;
+    border: none;
+    border: 1px solid $color-light;
+    &:hover {                                // это .sign-button2:hover
+        background: $color-hover2;
+        border: none;
+        border: 1px solid $color-light;
+    }
+}

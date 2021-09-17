@@ -1,0 +1,11 @@
+.footer-line {
+    display: flex;
+    justify-content: space-between;
+    @extend %font-add;
+    @include font (bold, 2.4rem);
+    box-shadow: 0px 4px 30px $color-header;
+}
+
+ .logo-object-footer {
+     width: 40px;
+ }

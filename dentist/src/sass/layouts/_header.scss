@@ -1,0 +1,54 @@
+.wrapper__first-line {
+background: $color-light;
+box-shadow: 0px 4px 2px $color-header;
+padding: 15px 0 17px 0;
+display: flex;
+align-items: center;
+justify-content: space-around;
+}
+
+.header_wrapper {             // чтобы гамбургер был левее
+    @include media-tablet {
+        padding-left: 10px;
+    }
+}
+
+
+
+.menu {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    & li {
+        padding: 0 15px;
+        @extend %font-add;
+        @include font (bold, 2.4rem);
+        flex-grow: 1;
+    }
+    a{
+        color: #9932CC;
+        text-decoration: none;
+        &:hover{
+            color: $color-hover2;
+            text-decoration: none;
+            @extend %transition;
+        }
+    }
+    
+}
+
+
+
+.sign-buttons >* {           //расстояние между кнопками 
+    margin-left: 20px;
+    @include media-mobile {
+        display: none;
+    }
+}
+
+
+.menu {
+    @include media-tablet {
+        display: none;
+    }
+}
