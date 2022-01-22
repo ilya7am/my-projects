@@ -1,0 +1,352 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+
+}
+
+body {
+    font-family: 'Mulish', sans-serif;
+    background-color: #E7E7E7;
+    margin: 0 20px;
+}
+
+
+/* Cards */
+
+.heading {
+    text-align: center;
+    font-size: 6rem;
+    color: #B22222;
+    margin: 20px 0 20px 0;
+}
+
+.passage {
+    font-size: 2rem;
+    padding: 5px;
+    margin: 20px;
+    color: #FFE4E1;
+    background: linear-gradient(#2F4F4F, #9198e5);
+    text-align: center;
+    width: 500px;
+    margin: auto;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    overflow: hidden;
+    
+}
+
+.card {
+    height: 400px;
+    border-radius: 20px;
+    margin: 10px;
+    color: #fff;
+    cursor: pointer;
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    transition: all 500ms ease-in-out;
+}
+
+.card h2 {
+    position: absolute;
+    font-size: 5.2rem;
+    bottom: 20px;
+    left: 40px;
+    margin: 0;
+    opacity: 0;
+}
+
+.card.active {
+    flex: 3;
+}
+
+.card.active h2 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+
+/* Slider */
+.slider {
+    position: relative;
+    overflow: hidden;
+    width: 700px;
+    height: 400px;
+    margin: 30px auto;
+    margin-bottom: 0px;
+}
+
+.sidebar {
+    height: 100%;
+    width: 35%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease-in-out;
+  }
+
+.sidebar > div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+.sidebar p {
+  font-size: 2.5rem;
+    color: #fff;
+    margin-top: 0px;
+}
+
+.sidebar h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    margin-top: -70px;
+}
+
+.main-slide {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 35%;
+    width: 65%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.main-slide > div {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+}
+
+
+.slider .controls button {
+    position: absolute;
+    left: 35%;
+    top: 50%;
+    z-index: 100;
+}
+
+
+button {
+    background-color: #fff;
+    border: none;
+    color: #aaa;
+    cursor: pointer;
+    font-size: 11px;
+    padding: 10px;
+}
+
+button:hover {
+    color: #222;
+}
+  
+button:focus {
+    outline: none;
+}
+  
+
+.slider .controls .down-button {
+    transform: translateX(-100%);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.slider .controls .up-button {
+    transform: translateY(-100%);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+
+
+/* Table drag-drop */
+.drag_drop {
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sec-heading {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #800080;
+}
+
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.2rem;
+    text-align: center;
+    gap: 30px;
+
+}
+
+.row.heading-table {
+    font-size: 2.6rem;
+}
+
+
+.col-header {
+    width: 150px;
+    box-shadow: 4px 4px 9px rgba(198, 198, 198, 0.36);
+    border-radius: 20px;
+    padding: 0.8rem 1rem;
+    color: #fff;
+  }
+
+.item {
+    width: 150px;
+    height: 76px;
+    border: 1px solid #eee;
+    box-shadow: 4px 4px 9px rgba(198, 198, 198, 0.36);
+    border-radius: 20px;
+    background: #f7f6f7;
+    padding: 0.8rem 1rem;
+    color: #edfafa;
+    text-align: center;
+    cursor: grab;
+    font-size: 2.2rem;
+}
+
+.item:active {
+    cursor: grabbing;
+}
+  
+.placeholder {
+    width: 150px;
+    height: 76px;
+}
+
+
+.item-one {
+    background-image: url('https://media.istockphoto.com/photos/seoul-south-korea-skyline-picture-id521707831?b=1&k=20&m=521707831&s=170667a&w=0&h=IW-PqLm_R4Khy3fS7XO8cnQ8E_pQMW1WHo3tLGpqeeo=');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.item-two {
+    background-image: url('https://media.istockphoto.com/photos/jerusalem-old-city-western-wall-with-israeli-flag-picture-id641067732?b=1&k=20&m=641067732&s=170667a&w=0&h=8ZF8yEiJmsVwrWbKYe-zg5gwFGAgzQEKmH8isg5zsTY=');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.item-three {
+    background-image: url('https://media.istockphoto.com/photos/new-york-city-nyc-usa-picture-id615398376?b=1&k=20&m=615398376&s=170667a&w=0&h=v59Pfuvn4jTqysv0RYKsYhoUM_ayitgQIsG8cFg3rM8=');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.item-four {
+    background-image: url('https://media.istockphoto.com/photos/frankfurt-skyline-with-st-catherines-church-hauptwache-and-financial-picture-id931840560?b=1&k=20&m=931840560&s=170667a&w=0&h=TnJDvNiS5-srvHlYt_ikXRNPkJI5OtKLefFfaRyDd0Y=');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.item-five {
+    background-image: url('https://images.unsplash.com/photo-1517309230475-6736d926b979?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y2hpbmF8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.country-name {
+    background: linear-gradient(90deg, #5a9c9c 0%, #15f358 179.25%);
+}
+  
+.current {
+    background: linear-gradient(90deg, #10eb60 0%, #57bdf0 80%);
+}
+  
+.later {
+    background: linear-gradient(90deg, #3aaeec 0%, #c6ec6c 100%);
+}
+
+
+.hold {
+    border: 5px solid #e5e5e5;
+}
+
+
+.hide {
+    display: none;  
+}
+
+.hovered {
+    border-top: 2px solid #68e0cf;
+}
+
+
+
+/* Board game */
+.section-three {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: space-around;
+}
+
+.mini-game {
+    margin-top: 45px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 400px;
+  
+  }
+  
+  .square {
+    width: 16px;
+    height:16px;
+    background: #9198e5;
+    margin: 2px;
+    box-shadow: 0 0 2px #9198e5;
+    transition: 2s ease;
+}
+  
+  
+  
+.square:hover {                 /*    чтобы рисунок сразу появлялся  */
+        transition-duration: 0s;
+}
+
+
+.link {
+    display: flex;
+    justify-content: center;
+    color: #800080;
+    font-size: 2rem;
+    gap: 30px;
+    margin-bottom: 10px;
+}
+
+.link a {
+    text-decoration:none;
+}
+
+.link a:hover {
+    color: #9ad2f3;
+    transition: 0.36s linear;
+}
